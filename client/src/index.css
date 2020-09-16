@@ -753,6 +753,28 @@ p {
 }
 
 @media (max-width: 800px) {
+    .blog-container {
+        width: 98%;
+        margin-top: 2px;
+    }
+    .blog-item-image-holder {
+        width: 100%;
+    }
+    .blog-list {
+        width: 90%;
+    }
+    .banner-title-b {
+        font-size: 2em;
+    }
+    .b-i-tittle {
+        font-size: 1.5em;
+    }
+    .blog-item-content {
+        width: 95%;
+        margin: 0;
+        margin: auto;
+        font-size: 0.9em;
+    }
     .blog-item {
         flex-direction: column;
     }

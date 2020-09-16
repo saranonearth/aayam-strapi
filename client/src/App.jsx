@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Blog from "./views/Blog";
@@ -13,7 +13,9 @@ import MenuIcon from "./components/MenuIcon";
 import Footer from "./components/Footer";
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  });
   const changeShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };
