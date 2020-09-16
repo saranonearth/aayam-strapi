@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Switch, BrowserRouter, Route, Router } from "react-router-dom";
+import { Switch, BrowserRouter, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Blog from "./views/Blog";
 import Contact from "./views/Contact";
@@ -21,6 +21,7 @@ function App() {
     <div>
       <BrowserRouter>
         {showNavbar ? <Navbar changeShowNavbar={changeShowNavbar} /> : null}
+        <MenuIcon changeShowNavbar={changeShowNavbar} showNavbar={showNavbar} />
         <Switch>
           <Route
             exact

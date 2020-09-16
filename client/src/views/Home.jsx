@@ -1,19 +1,19 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo.png";
-import MenuIcon from "../components/MenuIcon";
+import { Link } from "react-router-dom";
 const Home = ({ changeShowNavbar, showNavbar }) => {
   const [showMore, setShowMore] = useState(false);
   return (
     <div>
       <div class="triangle-left"></div>
       <div className="banner">
-        <MenuIcon changeShowNavbar={changeShowNavbar} showNavbar={showNavbar} />
         <div className="header">
           <div className="logo">
-            <img className="header-logo" src={Logo} alt="aayam-logo" />
+            <Link to="/">
+              <img className="header-logo" src={Logo} alt="aayam-logo" />
+            </Link>
           </div>
         </div>
-
         <div className="content">
           <p className="title-text">
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam,
@@ -22,7 +22,10 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
         </div>
         <div className="dash"></div>
         <div className="explore">
-          Explore &nbsp; <i className="fas fa-arrow-right"></i>
+          <Link className="explore-link" to="/productions">
+            {" "}
+            Explore &nbsp; <i className="fas fa-arrow-right"></i>
+          </Link>
         </div>
       </div>
       <div className="section-sm">
@@ -91,7 +94,7 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
               <div>
                 <img
                   className="mentor-image"
-                  src="https://via.placeholder.com/500"
+                  src="https://source.unsplash.com/500x500/?dancer"
                   alt=""
                 />
               </div>
@@ -123,10 +126,10 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
             </div>
             <div className="prev-next">
               <div>
-                <i class="fas fa-arrow-left c-icon"></i>
+                <i className="fas fa-arrow-left c-icon"></i>
               </div>
               <div>
-                <i class="fas fa-arrow-right c-icon"></i>
+                <i className="fas fa-arrow-right c-icon"></i>
               </div>
             </div>
           </div>
@@ -154,7 +157,7 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
         <div className="part2">
           <img
             className="image-banner"
-            src="https://via.placeholder.com/1920x1080"
+            src="https://source.unsplash.com/1920x1080/?building"
             alt=""
           />
         </div>

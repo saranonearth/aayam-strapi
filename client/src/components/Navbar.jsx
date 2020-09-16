@@ -60,15 +60,6 @@ const Navbar = ({ changeShowNavbar }) => {
                 Blog
               </Link>
             </div>
-            <div>
-              <Link
-                className="link"
-                onClick={() => changeShowNavbar()}
-                to="/contact"
-              >
-                Contact Us
-              </Link>
-            </div>
           </div>
         </div>
         <div className="nav-section2 no-mobile">
