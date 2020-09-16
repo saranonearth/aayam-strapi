@@ -6,6 +6,7 @@ import Logo from "../assets/logo.png";
 const Events = () => {
   return (
     <div>
+      <div class="triangle-left move"></div>
       <div className="banner banner-2">
         <div className="header">
           <div className="logo">
@@ -16,7 +17,7 @@ const Events = () => {
         </div>
 
         <div className="content">
-          <p className="title-text">Events</p>
+          <p className="title-text">Courses</p>
         </div>
         <div className="dash"></div>
       </div>

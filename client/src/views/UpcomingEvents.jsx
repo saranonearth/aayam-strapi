@@ -5,6 +5,7 @@ import Logo from "../assets/logo.png";
 const UpcomingEvents = () => {
   return (
     <div>
+      <div class="triangle-left move"></div>
       <div className="banner banner-2">
         <div className="header">
           <div className="logo">

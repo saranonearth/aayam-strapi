@@ -30,7 +30,7 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
       </div>
       <div className="section-sm">
         <div className="sm-content">
-          <p className="title1">Our Story</p>
+          <p className="title1">About Aayam</p>
           <p className="text">
             “Aayam”-an exclusive institute of arts, was founded in the year
             1997, and also affiliated with Pracheen Kala Kendra, an Open
@@ -86,7 +86,7 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
       </div>
       <div className="section-mentors">
         <div className="center">
-          <div className="title-bold">Our Mentors</div>
+          <div className="title-bold">Our Guru</div>
         </div>
         <div className="card-list">
           <div className="mentors-list">

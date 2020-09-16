@@ -28,9 +28,9 @@ const Navbar = ({ changeShowNavbar }) => {
               <Link
                 className="link"
                 onClick={() => changeShowNavbar()}
-                to="/events"
+                to="/courses"
               >
-                Events
+                Courses
               </Link>
             </div>
             <div>
@@ -58,6 +58,15 @@ const Navbar = ({ changeShowNavbar }) => {
                 to="/blog"
               >
                 Blog
+              </Link>
+            </div>
+            <div>
+              <Link
+                className="link"
+                onClick={() => changeShowNavbar()}
+                to="/contact"
+              >
+                Contact Us
               </Link>
             </div>
           </div>
