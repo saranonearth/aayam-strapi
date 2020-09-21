@@ -1,12 +1,69 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 
+import contact from "../assets/contacts.png";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
 
 const Contact = () => {
+  const [state, setState] = useState({
+    name: "",
+    email: "",
+    number: "",
+    message: "",
+  });
+
+  const [status, setStatus] = useState(null);
+
+  const handleChange = (e) => {
+    setState({
+      ...state,
+      [e.target.name]: e.target.value,
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const config = {
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+
+    const body = {
+      Name: state.name,
+      Phone: state.number,
+      Email: state.email,
+      Message: state.message,
+    };
+
+    try {
+      const response = await axios.post(
+        "http://localhost:1337/messages",
+        body,
+        config
+      );
+      console.log(response);
+      if (response.status == 200) {
+        setStatus("Thanks for reaching out.");
+      } else {
+        setStatus("Something went wrong. Try again.");
+      }
+    } catch (error) {
+      setStatus("Something went wrong. Try again.");
+    }
+
+    setState({
+      name: "",
+      email: "",
+      number: "",
+      message: "",
+    });
+  };
+
   return (
     <div>
-      <div class="triangle-left move"></div>
+      <div className="triangle-left move"></div>
       <div className="banner banner-2">
         <div className="header">
           <div className="logo">
@@ -26,6 +83,9 @@ const Contact = () => {
         <div className="center">
           <div className="title-bold m">Get in touch</div>
         </div>
+        <div className="center">
+          <img className="contact-icon" src={contact} alt="contact-icon" />
+        </div>
 
         <div className="center">
           <br />
@@ -43,22 +103,47 @@ const Contact = () => {
         </div>
         <div className="message">
           <div>
-            <form>
+            <form onSubmit={handleSubmit}>
               <div className="field">
                 <label htmlFor="name">Name</label> <br />
-                <input type="text" name="name" />
+                <input
+                  onChange={handleChange}
+                  value={state.name}
+                  required
+                  type="text"
+                  name="name"
+                />
               </div>
               <div className="field">
                 <label htmlFor="email">Email</label> <br />
-                <input type="text" name="email" />
+                <input
+                  onChange={handleChange}
+                  required
+                  value={state.email}
+                  type="email"
+                  name="email"
+                />
               </div>
               <div className="field">
                 <label htmlFor="phone">Contact Number</label> <br />
-                <input type="text" name="number" />
+                <input
+                  onChange={handleChange}
+                  value={state.number}
+                  required
+                  type="text"
+                  name="number"
+                />
               </div>
               <div className="field">
                 <label htmlFor="message">Message</label> <br />
-                <textarea name="message" cols="30" rows="10"></textarea>
+                <textarea
+                  value={state.message}
+                  onChange={handleChange}
+                  required
+                  name="message"
+                  cols="30"
+                  rows="10"
+                ></textarea>
               </div>
               <div>
                 <button type="submit" className="submit-btn">
@@ -66,6 +151,7 @@ const Contact = () => {
                 </button>
               </div>
             </form>
+            <div className="center c2">{status && <p>{status}</p>}</div>
           </div>
         </div>
       </div>

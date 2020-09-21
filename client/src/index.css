@@ -29,6 +29,10 @@ body {
     height: 99vh;
 }
 
+.contact-icon {
+    width: 200px;
+}
+
 .section-sm {
     background: var(--yellow);
     width: 74%;
@@ -866,6 +870,11 @@ input {
     margin: 10px 0px;
 }
 
+textarea {
+    padding: 10px;
+    font-size: 16px;
+}
+
 .submit-btn {
     background-color: var(--blue);
     color: white;
@@ -883,7 +892,14 @@ input {
     background-color: #e7ac59;
 }
 
+.c2 {
+    color: var(--blue);
+}
+
 @media (max-width: 800px) {
+    .contact-icon {
+        width: 120px;
+    }
     .production-list {
         width: 98%;
     }
