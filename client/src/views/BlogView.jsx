@@ -30,7 +30,7 @@ const BlogView = () => {
               width={"100%"}
               height={"60vh"}
               className="d-image"
-              src={""}
+              src={"https://via.placeholder.com/1280x720"}
             />
           </div>
 

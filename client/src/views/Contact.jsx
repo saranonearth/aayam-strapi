@@ -4,7 +4,7 @@ import axios from "axios";
 import contact from "../assets/contacts.png";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
-
+import _ from "../config";
 const Contact = () => {
   const [state, setState] = useState({
     name: "",
@@ -38,11 +38,7 @@ const Contact = () => {
     };
 
     try {
-      const response = await axios.post(
-        "http://localhost:1337/messages",
-        body,
-        config
-      );
+      const response = await axios.post(`${_.API_URL}/messages`, body, config);
       console.log(response);
       if (response.status == 200) {
         setStatus("Thanks for reaching out.");

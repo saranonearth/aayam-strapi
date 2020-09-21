@@ -27,7 +27,7 @@ const Blog = () => {
               <div className="blog-item-image-holder">
                 <img
                   className="blog-item-img"
-                  src="https://source.unsplash.com/1920x1080/?building"
+                  src="https://via.placeholder.com/1920x1080"
                   alt=""
                 />
               </div>
