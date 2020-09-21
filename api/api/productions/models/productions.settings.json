@@ -1,0 +1,52 @@
+{
+  "kind": "collectionType",
+  "collectionName": "productions",
+  "info": {
+    "name": "Productions"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true
+  },
+  "attributes": {
+    "Title": {
+      "type": "string",
+      "required": true
+    },
+    "Banner": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true
+    },
+    "Content": {
+      "type": "richtext",
+      "required": false
+    },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
+    "VideoLink": {
+      "type": "string"
+    },
+    "Date": {
+      "type": "string"
+    },
+    "Time": {
+      "type": "string"
+    },
+    "Venue": {
+      "type": "string"
+    },
+    "Fee": {
+      "type": "string"
+    },
+    "PID": {
+      "type": "string"
+    }
+  }
+}

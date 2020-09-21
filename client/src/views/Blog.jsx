@@ -21,11 +21,6 @@ const Blog = () => {
         <div className="dash"></div>
       </div>
       <div className="blog-container">
-        <div className="banner-img">
-          <div className="banner-b-content">
-            <h1 className="banner-title-b">Lorem ipsum dolor sit amet.</h1>
-          </div>
-        </div>
         <div className="blog-list">
           <div className="blog-items">
             <div className="blog-item">
@@ -37,7 +32,9 @@ const Blog = () => {
                 />
               </div>
               <div className="blog-item-content">
-                <p className="b-i-tittle">Lorem ipsum dolor sit amet.</p>
+                <Link className="b-i-tittle" to="/blog/0">
+                  <p className="b-i-tittle">Lorem ipsum dolor sit amet.</p>
+                </Link>
                 <p className="description">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Quibusdam, ipsum! Lorem ipsum dolor sit amet consectetur
@@ -55,7 +52,9 @@ const Blog = () => {
                 />
               </div>
               <div className="blog-item-content">
-                <p className="b-i-tittle">Lorem ipsum dolor sit amet.</p>
+                <Link className="b-i-tittle" to="/blog/0">
+                  <p className="b-i-tittle">Lorem ipsum dolor sit amet.</p>
+                </Link>
                 <p className="description">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Quibusdam, ipsum! Lorem ipsum dolor sit amet consectetur

@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import Partners from "../components/Partners";
 const Home = ({ changeShowNavbar, showNavbar }) => {
   const [showMore, setShowMore] = useState(false);
   return (
@@ -204,6 +205,13 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
             </p>
           </div>
         </div>
+      </div>
+      <div className="section-achievements">
+        <div className="center mt-4">
+          <div className="title-bold mt-4">Our Partners</div>
+        </div>
+
+        <Partners />
       </div>
     </div>
   );

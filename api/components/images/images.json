@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_images_images",
+  "info": {
+    "name": "Images",
+    "icon": "apple-alt"
+  },
+  "options": {},
+  "attributes": {
+    "Gallery": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

@@ -22,21 +22,24 @@ const Contact = () => {
         <div className="dash"></div>
       </div>
       <div className="contact">
+        <br />
         <div className="center">
-          <p>Get in touch</p>
+          <div className="title-bold m">Get in touch</div>
         </div>
+
         <div className="center">
           <br />
           <br />
           <p>aayam@example.com </p>
         </div>
-        <div className="center">
+        <div className="center mb-10">
           {" "}
           <br />
           <p>+91 98562 25232</p>
         </div>
+
         <div className="center">
-          <p>Get in touch</p>
+          <div className="title-bold m">Got a query?</div>
         </div>
         <div className="message">
           <div>
@@ -56,6 +59,11 @@ const Contact = () => {
               <div className="field">
                 <label htmlFor="message">Message</label> <br />
                 <textarea name="message" cols="30" rows="10"></textarea>
+              </div>
+              <div>
+                <button type="submit" className="submit-btn">
+                  Submit
+                </button>
               </div>
             </form>
           </div>
