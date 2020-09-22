@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "productions",
+  "collectionName": "upcoming_events",
   "info": {
-    "name": "Productions"
+    "name": "UpcomingEvents"
   },
   "options": {
     "increments": true,
@@ -13,6 +13,10 @@
       "type": "string",
       "required": true
     },
+    "Description": {
+      "type": "text",
+      "required": true
+    },
     "Banner": {
       "model": "file",
       "via": "related",
@@ -20,23 +24,16 @@
         "images"
       ],
       "plugin": "upload",
-      "required": true
-    },
-    "Content": {
-      "type": "richtext",
       "required": false
     },
-    "Description": {
-      "type": "text",
+    "PID": {
+      "type": "string",
       "required": true
     },
-    "VideoLink": {
+    "Time": {
       "type": "string"
     },
     "Date": {
-      "type": "string"
-    },
-    "Time": {
       "type": "string"
     },
     "Venue": {
@@ -45,9 +42,11 @@
     "Fee": {
       "type": "string"
     },
-    "PID": {
-      "type": "string",
-      "required": true
+    "Content": {
+      "type": "richtext"
+    },
+    "VideoLink": {
+      "type": "string"
     }
   }
 }

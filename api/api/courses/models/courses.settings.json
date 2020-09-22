@@ -1,8 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "productions",
+  "collectionName": "courses",
   "info": {
-    "name": "Productions"
+    "name": "Courses"
   },
   "options": {
     "increments": true,
@@ -11,6 +11,13 @@
   "attributes": {
     "Title": {
       "type": "string",
+      "required": true
+    },
+    "Fee": {
+      "type": "string"
+    },
+    "Description": {
+      "type": "text",
       "required": true
     },
     "Banner": {
@@ -22,27 +29,19 @@
       "plugin": "upload",
       "required": true
     },
-    "Content": {
-      "type": "richtext",
-      "required": false
+    "Time": {
+      "type": "string"
     },
-    "Description": {
-      "type": "text",
-      "required": true
+    "Conent": {
+      "type": "richtext"
     },
     "VideoLink": {
-      "type": "string"
-    },
-    "Date": {
-      "type": "string"
-    },
-    "Time": {
       "type": "string"
     },
     "Venue": {
       "type": "string"
     },
-    "Fee": {
+    "Date": {
       "type": "string"
     },
     "PID": {
