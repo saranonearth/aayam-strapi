@@ -6,7 +6,7 @@ const BlogView = () => {
   return (
     <div>
       <div>
-        <div class="triangle-left move"></div>
+        <div className="triangle-left move"></div>
         <div className="banner banner-2">
           <div className="header">
             <div className="logo">
@@ -30,7 +30,7 @@ const BlogView = () => {
               width={"100%"}
               height={"60vh"}
               className="d-image"
-              src={""}
+              src={"https://via.placeholder.com/1280x720"}
             />
           </div>
 

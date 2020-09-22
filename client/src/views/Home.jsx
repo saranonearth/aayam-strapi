@@ -6,7 +6,7 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
   const [showMore, setShowMore] = useState(false);
   return (
     <div>
-      <div class="triangle-left"></div>
+      <div className="triangle-left"></div>
       <div className="banner">
         <div className="header">
           <div className="logo">

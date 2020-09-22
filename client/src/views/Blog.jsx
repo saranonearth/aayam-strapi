@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Blog = () => {
   return (
     <div>
-      <div class="triangle-left move"></div>
+      <div className="triangle-left move"></div>
       <div className="banner banner-2">
         <div className="header">
           <div className="logo">
@@ -27,7 +27,7 @@ const Blog = () => {
               <div className="blog-item-image-holder">
                 <img
                   className="blog-item-img"
-                  src="https://source.unsplash.com/1920x1080/?building"
+                  src="https://via.placeholder.com/1920x1080"
                   alt=""
                 />
               </div>

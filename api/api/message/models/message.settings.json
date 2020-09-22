@@ -18,7 +18,7 @@
     "Phone": {
       "type": "string"
     },
-    "Messege": {
+    "Message": {
       "type": "text"
     }
   }
