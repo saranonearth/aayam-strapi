@@ -1,7 +1,8 @@
 import React from "react";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
-const Gallery = () => {
+const Gallery = ({ props }) => {
+  console.log(props);
   return (
     <div>
       <div className="triangle-left move"></div>
@@ -20,142 +21,142 @@ const Gallery = () => {
         <div className="dash"></div>
       </div>
 
-      <div class="container">
-        <div class="gallery-container w-3 h-3">
-          <div class="gallery-item">
-            <div class="image">
+      <div className="container">
+        <div className="gallery-container w-3 h-3">
+          <div className="gallery-item">
+            <div className="image">
               <img
                 src="https://source.unsplash.com/1600x900/?nature"
                 alt="people"
               />
             </div>
-            <div class="text">
+            <div className="text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
               ratione!
             </div>
           </div>
         </div>
-        <div class="gallery-container w-3 h-3">
-          <div class="gallery-item">
-            <div class="image">
+        <div className="gallery-container w-3 h-3">
+          <div className="gallery-item">
+            <div className="image">
               <img
                 src="https://source.unsplash.com/1600x900/?place"
                 alt="people"
               />
             </div>
-            <div class="text">
+            <div className="text">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem,
               obcaecati.
             </div>
           </div>
         </div>
-        <div class="gallery-container w-3 h-3">
-          <div class="gallery-item">
-            <div class="image">
+        <div className="gallery-container w-3 h-3">
+          <div className="gallery-item">
+            <div className="image">
               <img
                 src="https://source.unsplash.com/1600x900/?people"
                 alt="people"
               />
             </div>
-            <div class="text">
+            <div className="text">
               Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem,
               obcaecati.
             </div>
           </div>
         </div>
-        <div class="gallery-container w-3 h-3">
-          <div class="gallery-item">
-            <div class="image">
+        <div className="gallery-container w-3 h-3">
+          <div className="gallery-item">
+            <div className="image">
               <img
                 src="https://source.unsplash.com/1600x900/?art"
                 alt="people"
               />
             </div>
-            <div class="text">
+            <div className="text">
               Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim,
               molestias!
             </div>
           </div>
         </div>
-        <div class="gallery-container w-3 h-3">
-          <div class="gallery-item">
-            <div class="image">
+        <div className="gallery-container w-3 h-3">
+          <div className="gallery-item">
+            <div className="image">
               <img
                 src="https://source.unsplash.com/1600x900/?cars"
                 alt="people"
               />
             </div>
-            <div class="text">
+            <div className="text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
               aliquid.
             </div>
           </div>
         </div>
-        <div class="gallery-container w-3 h-3">
-          <div class="gallery-item">
-            <div class="image">
+        <div className="gallery-container w-3 h-3">
+          <div className="gallery-item">
+            <div className="image">
               <img
                 src="https://source.unsplash.com/1600x900/?food"
                 alt="people"
               />
             </div>
-            <div class="text">
+            <div className="text">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa,
               voluptatem.
             </div>
           </div>
         </div>
-        <div class="gallery-container w-3 h-3">
-          <div class="gallery-item">
-            <div class="image">
+        <div className="gallery-container w-3 h-3">
+          <div className="gallery-item">
+            <div className="image">
               <img
                 src="https://source.unsplash.com/1600x900/?cat"
                 alt="people"
               />
             </div>
-            <div class="text">
+            <div className="text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
               aliquid.
             </div>
           </div>
         </div>
-        <div class="gallery-container w-3 h-3">
-          <div class="gallery-item">
-            <div class="image">
+        <div className="gallery-container w-3 h-3">
+          <div className="gallery-item">
+            <div className="image">
               <img
                 src="https://source.unsplash.com/1600x900/?animal"
                 alt="people"
               />
             </div>
-            <div class="text">
+            <div className="text">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa,
               voluptatem.
             </div>
           </div>
         </div>
-        <div class="gallery-container w-3 h-3">
-          <div class="gallery-item">
-            <div class="image">
+        <div className="gallery-container w-3 h-3">
+          <div className="gallery-item">
+            <div className="image">
               <img
                 src="https://source.unsplash.com/1600x900/?cake"
                 alt="people"
               />
             </div>
-            <div class="text">
+            <div className="text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta,
               aliquid.
             </div>
           </div>
         </div>
-        <div class="gallery-container w-3 h-3">
-          <div class="gallery-item">
-            <div class="image">
+        <div className="gallery-container w-3 h-3">
+          <div className="gallery-item">
+            <div className="image">
               <img
                 src="https://source.unsplash.com/1600x900/?building"
                 alt="people"
               />
             </div>
-            <div class="text">
+            <div className="text">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa,
               voluptatem.
             </div>

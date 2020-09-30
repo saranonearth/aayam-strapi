@@ -1,14 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
-const Navbar = ({ changeShowNavbar }) => {
+const Navbar = ({ changeShowNavbar, props }) => {
+  console.log(props);
   return (
     <div className="navbar">
       <div className="nav-container">
         <div className="nav-section1">
           <div className="nav-section1-content">
             <div>
-              <i class="far fa-compass compass-icon"></i>
+              <i className="far fa-compass compass-icon"></i>
             </div>
             <div>
               <Link className="link" onClick={() => changeShowNavbar()} to="/">

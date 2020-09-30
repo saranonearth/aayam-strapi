@@ -1,7 +1,7 @@
 import React from "react";
 import YouTube from "react-youtube";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Logo from "../assets/logo.png";
 
 const Description = () => {
@@ -12,6 +12,11 @@ const Description = () => {
       autoplay: 0,
     },
   };
+
+  let params = useParams();
+  const id = params.id;
+  const event = params.event;
+  console.log(id, event);
   return (
     <div>
       <div className="triangle-left move"></div>

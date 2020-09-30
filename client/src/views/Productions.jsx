@@ -6,7 +6,7 @@ import axios from "axios";
 import _ from "../config";
 import Loader from "../components/Loader";
 import Empty from "../assets/empty.png";
-const Productions = ({ history }) => {
+const Productions = () => {
   const [state, setState] = useState({
     data: "",
     loading: true,
@@ -73,7 +73,7 @@ const Productions = ({ history }) => {
               </div>
 
               <div>
-                <p>No Productions. Check again later </p>
+                <p>No productions. Check again later </p>
               </div>
             </div>
           </div>
