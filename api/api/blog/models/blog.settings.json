@@ -21,7 +21,7 @@
       "model": "file",
       "via": "related",
       "allowedTypes": [
-        "videos"
+        "images"
       ],
       "plugin": "upload",
       "required": true
@@ -33,7 +33,7 @@
       "type": "string"
     },
     "PublishedOn": {
-      "type": "datetime"
+      "type": "date"
     }
   }
 }

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import Partners from "../components/Partners";
 const Home = ({ changeShowNavbar, showNavbar }) => {
   const [showMore, setShowMore] = useState(false);
+
   return (
     <div>
       <div className="triangle-left"></div>

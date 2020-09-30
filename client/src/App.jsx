@@ -25,29 +25,30 @@ function App() {
       <BrowserRouter>
         {showNavbar ? <Navbar changeShowNavbar={changeShowNavbar} /> : null}
         <MenuIcon changeShowNavbar={changeShowNavbar} showNavbar={showNavbar} />
-        <ScrollToTop>
-          <Switch>
-            <Route
-              exact
-              path="/"
-              render={(props) => (
-                <Home
-                  showNavbar={showNavbar}
-                  changeShowNavbar={changeShowNavbar}
-                />
-              )}
-            />
-            <Route exact path="/gallery" component={Gallery} />
-            <Route exact path="/courses" component={Events} />
-            <Route exact path="/upcoming-events" component={UpcomingEvents} />
-            <Route exact path="/productions" component={Productions} />
-            <Route exact path="/blog" component={Blog} />
-            <Route exact path="/blog/:id" component={BlogView} />
-            <Route exact path="/contact" component={Contact} />
-            <Route exact path="/details/:event/:id" component={Description} />
-            <Route component={NotFound} />
-          </Switch>
-        </ScrollToTop>
+
+        <Switch>
+          <Route
+            exact
+            path="/"
+            render={(props) => (
+              <Home
+                {...props}
+                showNavbar={showNavbar}
+                changeShowNavbar={changeShowNavbar}
+              />
+            )}
+          />
+          <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/courses" component={Events} />
+          <Route exact path="/upcoming-events" component={UpcomingEvents} />
+          <Route exact path="/productions" component={Productions} />
+          <Route exact path="/blog" component={Blog} />
+          <Route exact path="/blog/:id" component={BlogView} />
+          <Route exact path="/contact" component={Contact} />
+          <Route exact path="/details/:event/:id" component={Description} />
+          <Route component={NotFound} />
+        </Switch>
+
         <Footer />
       </BrowserRouter>
     </div>
