@@ -352,6 +352,28 @@ p {
     height: 100%;
 }
 
+.folder-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: auto;
+}
+
+.f-item {
+    margin: 20px;
+    text-align: center;
+}
+
+.f-banner {
+    width: 450px;
+    height: 250px;
+}
+
+.med-1 {
+    font-size: 0.5em;
+}
+
 .con-icon {
     background-color: var(--blue);
     width: 50px;
@@ -932,6 +954,13 @@ textarea {
 }
 
 @media (max-width: 800px) {
+    .f-banner {
+        width: 350px;
+        height: 200px;
+    }
+    .folder-list {
+        justify-content: center;
+    }
     .bar {
         text-align: center;
     }

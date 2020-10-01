@@ -14,6 +14,7 @@ import Description from "./views/Description";
 import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import BlogView from "./views/BlogView";
+import GalleryFolders from "./views/GalleryFolders";
 function App() {
   const [showNavbar, setShowNavbar] = useState(false);
 
@@ -38,7 +39,8 @@ function App() {
               />
             )}
           />
-          <Route exact path="/gallery" component={Gallery} />
+          <Route exact path="/gallery" component={GalleryFolders} />
+          <Route exact path="/gallery/:id" component={Gallery} />
           <Route exact path="/courses" component={Events} />
           <Route exact path="/upcoming-events" component={UpcomingEvents} />
           <Route exact path="/productions" component={Productions} />
