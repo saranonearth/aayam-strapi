@@ -5,9 +5,8 @@ import axios from "axios";
 import _ from "../config";
 import Loader from "../components/Loader";
 import Empty from "../assets/empty.png";
-const Gallery = ({ props }) => {
-  console.log(props);
 
+const GalleryFolders = () => {
   const [state, setState] = useState({
     data: null,
     loading: true,
@@ -19,11 +18,11 @@ const Gallery = ({ props }) => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${_.API_URL}/galleries`);
-        console.log(response.data);
+        console.log("RESPONSE", response.data);
         if (!isCancelled) {
           setState({
             ...state,
-            data: response.data[0],
+            data: response.data,
             loading: false,
           });
         }
@@ -41,6 +40,7 @@ const Gallery = ({ props }) => {
       isCancelled = true;
     };
   }, []);
+
   return (
     <div>
       <div className="triangle-left move"></div>
@@ -58,30 +58,42 @@ const Gallery = ({ props }) => {
         </div>
         <div className="dash"></div>
       </div>
-
-      <div className="container">
-        <div className="gallery-container w-3 h-3">
-          <div className="gallery-item">
-            <div className="image">
-              <img
-                src="https://source.unsplash.com/1600x900/?nature"
-                alt="people"
-              />
+      <div className="folder-list">
+        {state.loading ? (
+          <div className="center">
+            <Loader />
+          </div>
+        ) : state.data ? (
+          state.data.map((d, i) => (
+            <div key={i} className="f-item">
+              <div>
+                <img
+                  className="f-banner"
+                  src={d.Images[0].url}
+                  alt={d.FolderName}
+                />
+              </div>
+              <div className="title-text">
+                <Link className="c2 med-1" to={`/gallery/${d._id}`}>
+                  {d.FolderName}
+                </Link>
+              </div>
             </div>
-            <div className="text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nobis,
-              ratione!
+          ))
+        ) : (
+          <div>
+            <div>
+              <img className="empty-icon" src={Empty} alt="empty-icon" />
+            </div>
+
+            <div>
+              <p>No courses. Check again later </p>
             </div>
           </div>
-        </div>
-      </div>
-      <div className="center">
-        <div className="button-dark">
-          <p>View More.</p>
-        </div>
+        )}
       </div>
     </div>
   );
 };
 
-export default Gallery;
+export default GalleryFolders;
