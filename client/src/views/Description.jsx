@@ -29,6 +29,7 @@ const Description = () => {
   });
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     let isCancelled = false;
     const fetchData = async () => {
       try {
@@ -121,7 +122,7 @@ const Description = () => {
             </div>
             <div className="d-content">
               <div className="description markdown">
-                <ReactMarkdown source={state.data.Conent} />
+                <ReactMarkdown source={state.data.Content} />
               </div>
             </div>
             {state.data.VideoLink ? (

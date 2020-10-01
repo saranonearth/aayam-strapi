@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 
 const Blog = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className="triangle-left move"></div>

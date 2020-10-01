@@ -12,6 +12,7 @@ const Productions = () => {
     loading: true,
   });
   useEffect(() => {
+    window.scrollTo(0, 0);
     let isCancelled = false;
     const fetchData = async () => {
       try {
@@ -62,7 +63,7 @@ const Productions = () => {
         ) : state.data.length > 0 ? (
           <div className="production-list">
             {state.data.map((e, i) => (
-              <Card key={i} data={e} />
+              <Card type={"productions"} key={i} data={e} />
             ))}
           </div>
         ) : (

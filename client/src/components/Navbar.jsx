@@ -37,7 +37,7 @@ const Navbar = ({ changeShowNavbar }) => {
               <Link
                 className="link"
                 onClick={() => changeShowNavbar()}
-                to="gallery"
+                to="/gallery"
               >
                 Gallery
               </Link>
