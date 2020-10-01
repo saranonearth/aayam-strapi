@@ -1,8 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
-const Navbar = ({ changeShowNavbar, props }) => {
-  console.log(props);
+const Navbar = ({ changeShowNavbar }) => {
   return (
     <div className="navbar">
       <div className="nav-container">

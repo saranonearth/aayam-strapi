@@ -6,7 +6,7 @@ import axios from "axios";
 import _ from "../config";
 import Loader from "../components/Loader";
 import Empty from "../assets/empty.png";
-const Events = ({ history }) => {
+const Events = () => {
   const [state, setState] = useState({
     data: "",
     loading: true,
@@ -62,7 +62,7 @@ const Events = ({ history }) => {
         ) : state.data.length > 0 ? (
           <div className="production-list">
             {state.data.map((e, i) => (
-              <Card key={i} data={e} />
+              <Card key={i} data={e} type={"courses"} />
             ))}
           </div>
         ) : (

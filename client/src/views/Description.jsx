@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import YouTube from "react-youtube";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link, useParams } from "react-router-dom";
 import Logo from "../assets/logo.png";
+import axios from "axios";
+import _ from "../config";
+import Loader from "../components/Loader";
+import Empty from "../assets/empty.png";
+const ReactMarkdown = require("react-markdown");
 
 const Description = () => {
   const opts = {
@@ -17,6 +22,40 @@ const Description = () => {
   const id = params.id;
   const event = params.event;
   console.log(id, event);
+
+  const [state, setState] = useState({
+    data: null,
+    loading: true,
+  });
+
+  useEffect(() => {
+    let isCancelled = false;
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${_.API_URL}/${event}?PID=${id}`);
+        console.log(response.data[0]);
+        if (!isCancelled) {
+          setState({
+            ...state,
+            data: response.data[0],
+            loading: false,
+          });
+        }
+      } catch (error) {
+        setState({
+          ...state,
+          data: null,
+          loading: false,
+        });
+      }
+    };
+
+    fetchData();
+    return () => {
+      isCancelled = true;
+    };
+  }, []);
+
   return (
     <div>
       <div className="triangle-left move"></div>
@@ -30,63 +69,93 @@ const Description = () => {
         </div>
 
         <div className="content">
-          <p className="title-text">Title Lorem ipsum dolor sit amet.</p>
+          <p className="title-text med">{state.data && state.data.Title}</p>
         </div>
         <div className="dash"></div>
       </div>
 
-      <div className="d-container">
-        <div className="d-img">
-          <LazyLoadImage
-            alt={"banner"}
-            effect={"blur"}
-            width={"100%"}
-            height={"60vh"}
-            className="d-image"
-            src={"https://source.unsplash.com/1280x720/?building"}
-          />
+      {state.loading ? (
+        <div className="center mt-4">
+          <Loader />
         </div>
-        <div className="bar">
-          <div className="bar-items">
-            <div className="bar-item">
-              <p className="info">Date</p>
-              <p className="info-detail">26 Sept,2020</p>
+      ) : state.data ? (
+        <>
+          <div className="d-container">
+            <div className="d-img">
+              <LazyLoadImage
+                alt={state.data.Title}
+                effect={"blur"}
+                width={"100%"}
+                height={"60vh"}
+                className="d-image"
+                src={state.data.Banner.url}
+              />
             </div>
-            <div className="bar-item">
-              <p className="info">Time</p>
-              <p className="info-detail">2PM</p>
+            <div className="bar">
+              <div className="bar-items">
+                {state.data.Date ? (
+                  <div className="bar-item">
+                    <p className="info">Date</p>
+                    <p className="info-detail">{state.data.Date}</p>
+                  </div>
+                ) : null}
+                {state.data.Time ? (
+                  <div className="bar-item">
+                    <p className="info">Time</p>
+                    <p className="info-detail">{state.data.Time}</p>
+                  </div>
+                ) : null}
+                {state.data.Venue ? (
+                  <div className="bar-item">
+                    <p className="info">Venue</p>
+                    <p className="info-detail">{state.data.Venue}</p>
+                  </div>
+                ) : null}
+                {state.data.Fee ? (
+                  <div className="bar-item">
+                    <p className="info">Fee</p>
+                    <p className="info-detail">Rs. {state.data.Fee}</p>
+                  </div>
+                ) : null}
+              </div>
             </div>
-            <div className="bar-item">
-              <p className="info">Venue</p>
-              <p className="info-detail">Grand Plaza</p>
+            <div className="d-content">
+              <div className="description markdown">
+                <ReactMarkdown source={state.data.Conent} />
+              </div>
             </div>
-            <div className="bar-item">
-              <p className="info">Fee</p>
-              <p className="info-detail">Rs. 200</p>
+            {state.data.VideoLink ? (
+              <div className="video">
+                <YouTube videoId={state.data.VideoLink} opts={opts} />
+              </div>
+            ) : null}
+            {state.data.RegisterLink ? (
+              <div className="center">
+                <button
+                  className="register"
+                  onClick={() => {
+                    window.open(state.data.RegisterLink, "_blank");
+                  }}
+                >
+                  Register
+                </button>
+              </div>
+            ) : null}
+          </div>
+        </>
+      ) : (
+        <div className="center flex-it">
+          <div>
+            <div>
+              <img className="empty-icon mt-4" src={Empty} alt="empty-icon" />
+            </div>
+
+            <div>
+              <p>No course found. Check again later </p>
             </div>
           </div>
         </div>
-        <div className="d-content">
-          <p className="description">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
-            excepturi nobis nisi ut, delectus recusandae fugiat aliquid beatae
-            expedita dolor quis alias rerum, tempore blanditiis quasi inventore
-            odio! Nulla, ad. lorem Lorem ipsum, dolor sit amet consectetur
-            adipisicing elit. Fuga, ea corporis consectetur cum architecto
-            soluta est suscipit facere quaerat quasi expedita! Provident hic,
-            magnam a saepe laudantium repudiandae eius sunt?Illum, ad ab rem aut
-            corporis dolor ea soluta tempora hic esse explicabo. Laudantium
-            quasi doloribus temporibus eveniet fuga excepturi veniam magnam
-            maxime facilis ad quam eos, reiciendis provident tenetur.
-          </p>
-        </div>
-        <div className="video">
-          <YouTube videoId="2g811Eo7K8U" opts={opts} />
-        </div>
-        <div className="center">
-          <button className="register">Register</button>
-        </div>
-      </div>
+      )}
     </div>
   );
 };
