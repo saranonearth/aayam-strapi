@@ -426,6 +426,10 @@ p {
     margin: auto;
 }
 
+.med {
+    font-size: 2em;
+}
+
 .f-part {
     width: 80%;
     margin: auto;
@@ -444,6 +448,26 @@ p {
 .footer-right {
     margin-left: 100px;
     width: 50%;
+}
+
+.markdown>h1,
+.markdown>h2,
+.markdown>h3 {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    font-family: var(--bold-font);
+    color: var(--blue);
+}
+
+.markdown>ul,
+.markdown>ol {
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+strong {
+    color: var(--blue) !important;
 }
 
 .footer {
@@ -516,9 +540,10 @@ p {
 }
 
 .p-card-title {
-    font-size: 1.5em;
+    font-size: 1.2em;
     color: var(--blue);
     font-family: var(--bold-font);
+    margin-bottom: 10px;
 }
 
 .button-2 {
@@ -906,6 +931,13 @@ textarea {
 }
 
 @media (max-width: 800px) {
+    .bar {
+        text-align: center;
+    }
+    .bar-items {
+        justify-content: center;
+        flex-direction: column;
+    }
     .contact-icon {
         width: 120px;
     }
