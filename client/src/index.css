@@ -344,6 +344,7 @@ p {
 
 .m-content {
     height: 85%;
+    margin-left: 10px;
 }
 
 .mentor-image {

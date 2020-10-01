@@ -1,10 +1,13 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import Partners from "../components/Partners";
 const Home = ({ changeShowNavbar, showNavbar }) => {
   const [showMore, setShowMore] = useState(false);
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div>
       <div className="triangle-left"></div>
@@ -127,12 +130,12 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
               </p>
             </div>
             <div className="prev-next">
-              <div>
+              {/* <div>
                 <i className="fas fa-arrow-left c-icon"></i>
               </div>
               <div>
                 <i className="fas fa-arrow-right c-icon"></i>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

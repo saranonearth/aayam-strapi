@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import axios from "axios";
 
 import contact from "../assets/contacts.png";
@@ -21,7 +21,9 @@ const Contact = () => {
       [e.target.name]: e.target.value,
     });
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
     const config = {

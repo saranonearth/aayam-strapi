@@ -12,6 +12,7 @@ const Events = () => {
     loading: true,
   });
   useEffect(() => {
+    window.scrollTo(0, 0);
     let isCancelled = false;
     const fetchData = async () => {
       try {
