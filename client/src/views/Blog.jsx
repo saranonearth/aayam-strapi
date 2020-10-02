@@ -5,8 +5,9 @@ import axios from "axios";
 import _ from "../config";
 import Loader from "../components/Loader";
 import Empty from "../assets/empty.png";
-
+import ReactGA from "react-ga";
 const Blog = () => {
+  ReactGA.pageview("/blog");
   const [state, setState] = useState({
     data: "",
     loading: true,
@@ -17,7 +18,7 @@ const Blog = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${_.API_URL}/blogs`);
-        console.log(response.data);
+
         if (!isCancelled) {
           setState({
             ...state,

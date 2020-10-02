@@ -5,6 +5,7 @@ import { Link, useParams } from "react-router-dom";
 import Logo from "../assets/logo.png";
 import axios from "axios";
 import _ from "../config";
+import ReactGA from "react-ga";
 import Loader from "../components/Loader";
 import Empty from "../assets/empty.png";
 const ReactMarkdown = require("react-markdown");
@@ -21,20 +22,19 @@ const Description = () => {
   let params = useParams();
   const id = params.id;
   const event = params.event;
-  console.log(id, event);
 
   const [state, setState] = useState({
     data: null,
     loading: true,
   });
-
+  ReactGA.pageview(`${id}`);
   useEffect(() => {
     window.scrollTo(0, 0);
     let isCancelled = false;
     const fetchData = async () => {
       try {
         const response = await axios.get(`${_.API_URL}/${event}?PID=${id}`);
-        console.log(response.data[0]);
+
         if (!isCancelled) {
           setState({
             ...state,

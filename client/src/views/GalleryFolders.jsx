@@ -5,20 +5,20 @@ import axios from "axios";
 import _ from "../config";
 import Loader from "../components/Loader";
 import Empty from "../assets/empty.png";
-
+import ReactGA from "react-ga";
 const GalleryFolders = () => {
   const [state, setState] = useState({
     data: null,
     loading: true,
   });
-
+  ReactGA.pageview("/gallery");
   useEffect(() => {
     window.scrollTo(0, 0);
     let isCancelled = false;
     const fetchData = async () => {
       try {
         const response = await axios.get(`${_.API_URL}/galleries`);
-        console.log("RESPONSE", response.data);
+
         if (!isCancelled) {
           setState({
             ...state,

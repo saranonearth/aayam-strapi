@@ -35,6 +35,14 @@ const Footer = () => {
           <div>
             <img className="logo-footer" src={Logo} alt="aayam-logo" />
           </div>
+          <div className="ma-n">
+            <p>
+              Website developed with ❤️ by &nbsp;
+              <a className="ma-na" href="https://saranonearth.me/">
+                saranonearth
+              </a>
+            </p>
+          </div>
         </div>
       </div>
     </div>

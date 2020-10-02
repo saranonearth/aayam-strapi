@@ -7,7 +7,7 @@ import _ from "../config";
 import ReactMarkdown from "react-markdown";
 import Loader from "../components/Loader";
 import Empty from "../assets/empty.png";
-
+import ReactGA from "react-ga";
 const BlogView = () => {
   const [state, setState] = useState({
     data: null,
@@ -16,13 +16,14 @@ const BlogView = () => {
 
   let params = useParams();
   const id = params.id;
+  ReactGA.pageview(`/blog/${id}`);
   useEffect(() => {
     window.scrollTo(0, 0);
     let isCancelled = false;
     const fetchData = async () => {
       try {
         const response = await axios.get(`${_.API_URL}/blogs/${id}`);
-        console.log(response.data);
+
         if (!isCancelled) {
           setState({
             ...state,
@@ -91,7 +92,7 @@ const BlogView = () => {
             <div className="center">
               <Link to="/blog">
                 <button type="submit" className="submit-btn">
-                  Read More
+                  Read more articles
                 </button>
               </Link>
             </div>

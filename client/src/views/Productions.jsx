@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import Logo from "../assets/logo.png";
 import axios from "axios";
+import ReactGA from "react-ga";
 import _ from "../config";
 import Loader from "../components/Loader";
 import Empty from "../assets/empty.png";
 const Productions = () => {
+  ReactGA.pageview("/productions");
   const [state, setState] = useState({
     data: "",
     loading: true,
