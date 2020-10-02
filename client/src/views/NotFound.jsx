@@ -1,7 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Logo from "../assets/logo.png";
+import ReactGA from "react-ga";
 const NotFound = () => {
+  ReactGA.pageview("/not-found");
   return (
     <div>
       <div className="triangle-left move"></div>

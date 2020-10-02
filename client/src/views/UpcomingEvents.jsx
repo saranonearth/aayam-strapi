@@ -3,10 +3,12 @@ import { Link } from "react-router-dom";
 import Card from "../components/Card";
 import Logo from "../assets/logo.png";
 import axios from "axios";
+import ReactGA from "react-ga";
 import _ from "../config";
 import Loader from "../components/Loader";
 import Empty from "../assets/empty.png";
 const UpcomingEvents = () => {
+  ReactGA.pageview("/upcoming-events");
   const [state, setState] = useState({
     data: "",
     loading: true,
@@ -17,7 +19,7 @@ const UpcomingEvents = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${_.API_URL}/upcoming-events`);
-        console.log(response);
+
         if (!isCancelled) {
           setState({
             ...state,

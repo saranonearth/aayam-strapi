@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import _ from "../config";
 import Loader from "../components/Loader";
+import ReactGA from "react-ga";
 import Empty from "../assets/empty.png";
 const Gallery = () => {
   const [state, setState] = useState({
@@ -13,14 +14,14 @@ const Gallery = () => {
 
   let params = useParams();
   const id = params.id;
-
+  ReactGA.pageview("/gallery");
   useEffect(() => {
     window.scrollTo(0, 0);
     let isCancelled = false;
     const fetchData = async () => {
       try {
         const response = await axios.get(`${_.API_URL}/galleries/${id}`);
-        console.log(response.data);
+
         if (!isCancelled) {
           setState({
             ...state,

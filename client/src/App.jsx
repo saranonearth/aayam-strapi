@@ -15,9 +15,14 @@ import Footer from "./components/Footer";
 import ScrollToTop from "./components/ScrollToTop";
 import BlogView from "./views/BlogView";
 import GalleryFolders from "./views/GalleryFolders";
+import ReactGA from "react-ga";
 function App() {
+  ReactGA.initialize("UA-179508868-1");
   const [showNavbar, setShowNavbar] = useState(false);
-
+  const style =
+    "color:red; font-size:16px; font-weight: bold; -webkit-text-stroke: 1px black;";
+  console.log("%c Developed by Saran", style);
+  console.log("🔥🔥 ", "https://github.com/saranonearth", "🔥🔥");
   const changeShowNavbar = () => {
     setShowNavbar(!showNavbar);
   };

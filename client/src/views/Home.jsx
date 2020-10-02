@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import ReactGA from "react-ga";
 import Partners from "../components/Partners";
 const Home = ({ changeShowNavbar, showNavbar }) => {
   const [showMore, setShowMore] = useState(false);
-
+  ReactGA.pageview("/home");
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);

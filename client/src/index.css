@@ -115,6 +115,14 @@ body {
     font-size: 2em;
 }
 
+.ma-n {
+    margin-top: -20px;
+}
+
+.ma-na {
+    font-size: 1em !important;
+}
+
 .close-icon {
     font-size: 2em;
 }
@@ -958,6 +966,9 @@ textarea {
 }
 
 @media (max-width: 800px) {
+    .ma-n {
+        margin-bottom: 20px;
+    }
     .f-banner {
         width: 350px;
         height: 200px;

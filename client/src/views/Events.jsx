@@ -6,11 +6,13 @@ import axios from "axios";
 import _ from "../config";
 import Loader from "../components/Loader";
 import Empty from "../assets/empty.png";
+import ReactGA from "react-ga";
 const Events = () => {
   const [state, setState] = useState({
     data: "",
     loading: true,
   });
+  ReactGA.pageview("/courses");
   useEffect(() => {
     window.scrollTo(0, 0);
     let isCancelled = false;
