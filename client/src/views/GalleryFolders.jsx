@@ -58,13 +58,14 @@ const GalleryFolders = () => {
         </div>
         <div className="dash"></div>
       </div>
-      <div className="folder-list">
-        {state.loading ? (
-          <div className="center">
-            <Loader />
-          </div>
-        ) : state.data ? (
-          state.data.map((d, i) => (
+
+      {state.loading ? (
+        <div className="center">
+          <Loader />
+        </div>
+      ) : state.data ? (
+        <div className="folder-list">
+          {state.data.map((d, i) => (
             <div key={i} className="f-item">
               <div>
                 <img
@@ -79,8 +80,10 @@ const GalleryFolders = () => {
                 </Link>
               </div>
             </div>
-          ))
-        ) : (
+          ))}
+        </div>
+      ) : (
+        <div className="center flex-it mt-4">
           <div>
             <div>
               <img className="empty-icon" src={Empty} alt="empty-icon" />
@@ -90,8 +93,8 @@ const GalleryFolders = () => {
               <p>No courses. Check again later </p>
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 };

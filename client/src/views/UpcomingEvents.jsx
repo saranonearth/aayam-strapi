@@ -64,7 +64,7 @@ const UpcomingEvents = () => {
         ) : state.data.length > 0 ? (
           <div className="production-list">
             {state.data.map((e, i) => (
-              <Card key={i} data={e} />
+              <Card key={i} type={"upcoming-events"} data={e} />
             ))}
           </div>
         ) : (

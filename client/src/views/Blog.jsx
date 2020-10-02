@@ -1,11 +1,45 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import _ from "../config";
+import Loader from "../components/Loader";
+import Empty from "../assets/empty.png";
 
 const Blog = () => {
+  const [state, setState] = useState({
+    data: "",
+    loading: true,
+  });
   useEffect(() => {
     window.scrollTo(0, 0);
+    let isCancelled = false;
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${_.API_URL}/blogs`);
+        console.log(response.data);
+        if (!isCancelled) {
+          setState({
+            ...state,
+            data: response.data,
+            loading: false,
+          });
+        }
+      } catch (error) {
+        setState({
+          ...state,
+          data: null,
+          loading: false,
+        });
+      }
+    };
+
+    fetchData();
+    return () => {
+      isCancelled = true;
+    };
   }, []);
+
   return (
     <div>
       <div className="triangle-left move"></div>
@@ -25,48 +59,39 @@ const Blog = () => {
       </div>
       <div className="blog-container">
         <div className="blog-list">
-          <div className="blog-items">
-            <div className="blog-item">
-              <div className="blog-item-image-holder">
-                <img
-                  className="blog-item-img"
-                  src="https://via.placeholder.com/1920x1080"
-                  alt=""
-                />
-              </div>
-              <div className="blog-item-content">
-                <Link className="b-i-tittle" to="/blog/0">
-                  <p className="b-i-tittle">Lorem ipsum dolor sit amet.</p>
-                </Link>
-                <p className="description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam, ipsum! Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Non, dolores. Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Deserunt, sapiente.
-                </p>
+          {state.loading ? (
+            <div className="center">
+              <Loader />
+            </div>
+          ) : state.data ? (
+            <div className="blog-items">
+              {state.data.map((d, i) => (
+                <div className="blog-item" key={i}>
+                  <div className="blog-item-image-holder">
+                    <img className="blog-item-img" src={d.Banner.url} alt="" />
+                  </div>
+                  <div className="blog-item-content">
+                    <Link className="b-i-tittle" to={`/blog/${d._id}`}>
+                      <p className="b-i-tittle">{d.Title}</p>
+                    </Link>
+                    <p className="description">{d.Description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="center flex-it">
+              <div>
+                <div>
+                  <img className="empty-icon" src={Empty} alt="empty-icon" />
+                </div>
+
+                <div>
+                  <p>No courses. Check again later </p>
+                </div>
               </div>
             </div>
-            <div className="blog-item">
-              <div className="blog-item-image-holder">
-                <img
-                  className="blog-item-img"
-                  src="https://source.unsplash.com/1920x1080/?leaf"
-                  alt=""
-                />
-              </div>
-              <div className="blog-item-content">
-                <Link className="b-i-tittle" to="/blog/0">
-                  <p className="b-i-tittle">Lorem ipsum dolor sit amet.</p>
-                </Link>
-                <p className="description">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Quibusdam, ipsum! Lorem ipsum dolor sit amet consectetur
-                  adipisicing elit. Non, dolores. Lorem ipsum dolor sit amet
-                  consectetur adipisicing elit. Deserunt, sapiente.
-                </p>
-              </div>
-            </div>
-          </div>
+          )}
         </div>
       </div>
     </div>

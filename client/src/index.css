@@ -82,6 +82,10 @@ body {
     transition: 0.8s;
 }
 
+.mt-b {
+    margin-bottom: 30px;
+}
+
 .explore:hover {
     font-size: 1.3em;
     cursor: pointer;
@@ -539,7 +543,7 @@ strong {
 .productions {
     width: 80%;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 40px;
 }
 
 .production-list {
