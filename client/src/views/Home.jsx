@@ -2,9 +2,15 @@ import React, { useEffect, useState } from "react";
 import Logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
 import ReactGA from "react-ga";
+import Guru from "../assets/guru.jpg";
 import Partners from "../components/Partners";
-const Home = ({ changeShowNavbar, showNavbar }) => {
+import Banner from "../assets/banner.jpg";
+import A1 from "../assets/A1.png";
+import A2 from "../assets/A2.png";
+import A3 from "../assets/A3.png";
+const Home = () => {
   const [showMore, setShowMore] = useState(false);
+  const [showMoreGuru, setShowMoreGuru] = useState(false);
   ReactGA.pageview("/home");
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -12,7 +18,7 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
   return (
     <div>
       <div className="triangle-left"></div>
-      <div className="banner">
+      <div className="banner banner-bg">
         <div className="header">
           <div className="logo">
             <Link to="/">
@@ -21,9 +27,10 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
           </div>
         </div>
         <div className="content">
-          <p className="title-text">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Magnam,
-            earum!
+          <p className="title-text small">
+            Aayam is a society dedicated to promoting Indian Culture by training
+            students in the nuances of Bharatnatyam since 1997 under
+            Guru-Shishya Parampara.
           </p>
         </div>
         <div className="dash"></div>
@@ -38,43 +45,52 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
         <div className="sm-content">
           <p className="title1">About Aayam</p>
           <p className="text">
-            “Aayam”-an exclusive institute of arts, was founded in the year
-            1997, and also affiliated with Pracheen Kala Kendra, an Open
-            University of performing and visual arts. <br />
-            Aayam was established by Ms.Sindhu Mishra, a learned Bharatnatyam
-            dancer and a dedicated teacher with the view of making young
-            generation aware of the aesthetics of performing arts like Dance &
-            Music.
+            Aayam — a society for the promotion of culture
             <br />
             <br />
-            <br /> It is observed that in today’s growing age of technology,
-            kids are being raised more on internet and various flashy gadgets
-            rather than enjoying outdoor physical activities. On one hand, teens
-            could be seen outperforming their teachers and parents in technology
-            and much more ambitious but on other hand their abilities are being
-            measured on academic parameters alone thereby limiting one’s own
-            creativity and thought process & thus youth is seeing the world only
-            through the screen in their hands.
+            Aayam is one of the few Indian Cultural Societies, which has been
+            active in various dimensions of fine arts for the past twenty years.
+            Although registered only in 1997, Aayam is working with a serious
+            commitment and dedication in the direction of developing a new sense
+            of belonging, especially amongst children. Therefore, it has been
+            running a teaching institute for classical as well as contemporary
+            arts by the most well-known professionals in every field.
+            <br />
+            <br />
+            Aayam wants to achieve the Omega Point of aesthetics and reinterpret
+            the traditions in the field of music, poetry, theatre, painting,
+            dance, and even social issues. Our effort is to integrate all forms
+            of art to achieve a wholesome experience. It has a full- time dance
+            company, which is constantly creating new works in the field of
+            dance and has been receiving rave reviews all over the country.
+            <br />
+            <br />
+            In the field of social welfare too, Aayam has shown its commitment
+            by organizing many events in collaboration with NDMC and Delhi
+            Commission for Women on a regular basis.
             {showMore && (
               <>
                 <br />
                 <br />
+                Aayam has produced some of the finest disciples in
+                Bharatanatyam. Many of them have been awarded the prestigious
+                National Scholarship from CCRT, Government of India. One of the
+                students of Aayam-Shashrek Ambardar has been awarded the
+                prestigious &#39;Bal Shree Award&#39; by the President of India.
+                Many of the senior students of Aayam have been performing
+                regularly and making waves in the field like Ritika, Kritika
+                Kumar, Arshia Mathur, Aparna Chandnani, Tanusha Tyagi, Swati
+                Mittal, Aashi Vats, Jai, Vibhuti and many others.
                 <br />
-                In such an increasingly globalized and competitive environment,
-                the strength of all the arts including dance, music, theatre,
-                painting etc. need to be recognized which plays an important
-                role in its ability to fuel the mind and thus fuels our
-                creativity. A creative mind has the ability to make discoveries,
-                innovations and thereby excelling in any field.
+                <br />
+                Aayam truly believes that each student has an unimaginably
+                strong potential and tries to explore it to its core so that
+                they are able to truly justify the art of Bharatanatyam.
                 <br />
                 <br />
-                <br /> Dance and music are capable of breaking boundaries of
-                caste, creed or language and unite people from different
-                background and cultural heritage. Dance is conversation between
-                body and soul. It is the expression of emotions, feelings and
-                opinions through graceful movements and manipulation of body,
-                whereas music touches the soul by transcending all boundaries of
-                communication and helps one to manifest unspoken desire.
+                Aayam has always been known for creating unusual work while
+                taking the form of Bharatanatyam in all its purity, yet going
+                beyond the confines of the traditional form and its content.
               </>
             )}
           </p>
@@ -98,11 +114,7 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
           <div className="mentors-list">
             <div className="mentor">
               <div>
-                <img
-                  className="mentor-image"
-                  src="https://source.unsplash.com/500x500/?dancer"
-                  alt=""
-                />
+                <img className="mentor-image" src={Guru} alt="Sindhu Mishra" />
               </div>
             </div>
           </div>
@@ -110,25 +122,75 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
             <div className="m-content">
               <div>
                 {" "}
-                <p className="title">Lorem, ipsum.</p>{" "}
+                <p className="title">Sindhu Mishra</p>{" "}
+                <p className="sub"> The Guru and The Danseuse</p>
               </div>
               <p className="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Repellendus, molestias rem tempore, voluptatem mollitia nam,
-                consectetur error odit exercitationem voluptatum optio iure
-                magni quidem accusamus atque! Sit impedit aut doloribus. Lorem
-                ipsum dolor sit amet, consectetur adipisicing elit. Esse dolorem
-                eligendi, sapiente, quis tempora illo natus dolores corrupti
-                porro cum harum consectetur hic. Quos facere, dignissimos
-                sapiente illum ex hic? Lorem ipsum dolor sit amet consectetur
-                adipisicing elit. Quas mollitia ad tenetur maiores ut quod
-                tempore non consectetur neque? Reprehenderit officia commodi,
-                consequuntur laboriosam placeat alias deleniti eos maiores
-                minus. Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Cumque dicta sed porro quae, aspernatur quisquam veniam
-                assumenda adipisci eaque, sapiente dolorem dolore animi
-                veritatis repellat ipsa totam laudantium voluptatibus facere.
+                “Teaching Dance (Bharatanatyam) is like following a rigorous
+                spiritual path as it is a way of paying obeisance to my
+                illustrious Gurus. The driving force is the thought that I may
+                not leave this body without repaying the debt of my great
+                masters” – Sindhu Mishra. She has performed in almost all
+                important and prestigious Cultural Festivals of India such as
+                the Megh Malhar festival of U.P Government, Jhansi Festival,
+                Lucknow Mahotsav, Tai Mahotsav Soorya Festival, Ganga Mahotsav,
+                Nisha Gandhi Festival, Palakkad Festival, Bharat Bhawan, and
+                many others as a solo Bharatanatyam Dancer. While performing in
+                the classical milieu under the guidance of eminent Gurus, Shri
+                KN Dakshinamoorthy, Shri KJ Govindarajan, and Smt. Kamalini
+                Dutt, Sindhu has also emerged as a choreographer with a
+                compelling style of her own, her themes speak of her concerns
+                and convictions as a contemporary artist.She has conducted
+                several workshops all over the country in modern dance
+                movements. An intense believer in the integrity of her form,
+                Sindhu has been awarded a National Fellowship by the Ministry of
+                Human Resource Development for pursuing Creative Work in
+                Bharatanatyam. She received the Natya Ratna Award conferred by
+                Sh. R. Venkatraman, Former president of India, a state Award
+                from the Sindhi Academy, Government of Delhi for contribution in
+                the field of Bharatanatyam.
               </p>
+              {showMoreGuru ? (
+                <p className="description">
+                  Sindhu is also an acknowledged name as an actress in theatre,
+                  having worked with some of the most eminent theatre directors
+                  of the country. Her work has featured in all the major
+                  National Festivals of Theatre. As a solo performer in the play
+                  NAACHNI’, she has been particularly acclaimed as an actress of
+                  extraordinary talent at par with the best in the field. She
+                  has played a vital role in conceiving and organizing extremely
+                  important events and festivals for the Government of Delhi.
+                  These events have been instrumental in reviving and promoting
+                  all possible genres of arts. Her choreography at an event at
+                  Arunachal Pradesh showcasing almost all tribal forms of the
+                  state for Hon’ble Home Minister of India was highly
+                  appreciated. She has been the choreographer for many grand
+                  events, one of those being “Divya Kala Shakti – Witnessing
+                  Ability in Disability” presented by 250 children with special
+                  needs for Hon’ble President of India at President House,
+                  organized by Department of Social Justice and Empowerment on
+                  18th April 2019. Earning a huge appreciation for this event,
+                  she received the opportunity to again choreograph this event
+                  for Hon’ble President and Prime Minister of India, being
+                  staged this time at Parliament House, on 23rd July 2019. At
+                  the behest of Dadra Nagar Haveli’s administration, she
+                  choreographed and conceived an unusual event “Samarpan” for
+                  the Hon’ble President of India in Silwasa. The program
+                  showcased the classical forms of India along with the tribal
+                  dance forms of that region woven together in a beautiful
+                  tapestry on 17th Feb 2020.
+                </p>
+              ) : null}
+              <div className="center mt-4 mt-less">
+                <div
+                  onClick={() => {
+                    setShowMoreGuru(!showMoreGuru);
+                  }}
+                  className="button"
+                >
+                  {!showMoreGuru ? <p>Read More.</p> : <p>Read less.</p>}
+                </div>
+              </div>
             </div>
             <div className="prev-next">
               {/* <div>
@@ -150,22 +212,25 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
               </div>
               <div>
                 <p className="description white">
-                  Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                  Iusto, tempore dignissimos doloremque deserunt omnis nulla
-                  pariatur corrupti voluptatibus reprehenderit rerum atque qui
-                  veniam quis eos voluptates magnam animi accusamus deleniti?
-                  Lorem ipsum dolor sit amet consectetur.
+                  Our guru Smt Sindhu Mishra says “that Indian cultural dance
+                  and music has been considered as worship of God, practicing
+                  these arts is like Sadhna(meditation) which transports the
+                  performer to the higher plane of consciousness leading to
+                  union between Individual self with Divine self. Hence,
+                  learning any form of art not only helps in developing personal
+                  skills but it completes all three dimensions of life and helps
+                  to enjoy and live each dimension of life wholly and thus goes
+                  the name- ‘Aayam’ “. With this belief, we are consistent in
+                  our efforts to imbibe the importance of classical arts in our
+                  students, so that they not only excel in the field of Art but
+                  also in life.
                 </p>
               </div>
             </div>
           </div>
         </div>
         <div className="part2">
-          <img
-            className="image-banner"
-            src="https://source.unsplash.com/1920x1080/?building"
-            alt=""
-          />
+          <img className="image-banner" src={Banner} alt="Our Methodology" />
         </div>
       </div>
       <div className="section-achievements">
@@ -174,46 +239,38 @@ const Home = ({ changeShowNavbar, showNavbar }) => {
         </div>
         <div className="a-list">
           <div className="a-card">
-            <img
-              src="https://via.placeholder.com/200"
-              className="a-image"
-              alt="achievement"
-            />
+            <img src={A2} className="a-image" alt="achievement" />
 
             <p className="semi-blod">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Accusantium sint, cum ullam hic deserunt illum.
+              <strong>Arshia Mathur</strong> – Recipient of Junior National
+              Scholarship from Centre for Cultural Resources and Training.
             </p>
           </div>
           <div className="a-card">
-            <img
-              src="https://via.placeholder.com/200"
-              className="a-image"
-              alt="achievement"
-            />
+            <img src={A1} className="a-image" alt="achievement" />
 
             <p className="semi-blod">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Accusantium sint, cum ullam hic deserunt illum.
+              <strong>Shashrek Ambardar</strong> – Shashrek is a talented
+              dancer, who has created a niche for himself in the field of dance
+              at a very young age. Shashrek is the recipient of National Bal
+              Shree Award, highest child honour awarded by the President. He has
+              also received Junior National Scholarship from Centre for Cultural
+              Resources and Training (CCRT).
             </p>
           </div>
           <div className="a-card">
-            <img
-              src="https://via.placeholder.com/200"
-              className="a-image"
-              alt="achievement"
-            />
+            <img src={A3} className="a-image" alt="achievement" />
 
             <p className="semi-blod">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-              Accusantium sint, cum ullam hic deserunt illum.
+              <strong>Tanusha Tyagi </strong>– Recipient of Junior National
+              Scholarship from Centre for Cultural Resources and Training.
             </p>
           </div>
         </div>
       </div>
       <div className="section-achievements">
         <div className="center mt-4">
-          <div className="title-bold mt-4">Our Partners</div>
+          <div className="title-bold mt-4">Our Partner</div>
         </div>
 
         <Partners />

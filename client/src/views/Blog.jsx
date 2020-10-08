@@ -18,7 +18,6 @@ const Blog = () => {
     const fetchData = async () => {
       try {
         const response = await axios.get(`${_.API_URL}/blogs`);
-
         if (!isCancelled) {
           setState({
             ...state,

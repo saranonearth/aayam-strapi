@@ -86,25 +86,48 @@ const Navbar = ({ changeShowNavbar }) => {
                 <p className="sub-title">Find us at</p>
                 <p>
                   Aayam <br />
-                  56-A, Pocket F, <br />
-                  Mayur Vihar Phase II,
-                  <br />
-                  New Delhi -110091
+                  Mandi House, <br />
+                  Delhi
                   <br />
                 </p>
               </div>
               <div className="ml-4 sub-in">
                 <p className="sub-title">Get in touch</p>
-                <p>aayam@example.com</p>
-                <p className="mt-4">+91 98562 25232</p>
+                <p>info.aayaminstitute@gmail.com</p>
+                <p className="mt-4">+91 78383 04770, +91 88265 85888</p>
               </div>
             </div>
             <div className="sub-section">
               <div className="sub-in">
                 <p className="sub-title">Get social</p>
-                <p>Facebook</p>
-                <p>Instagram</p>
-                <p>Twitter</p>
+                <p className="sub-title">Get social</p>
+                <p>
+                  <a
+                    className="link-a"
+                    href="https://www.instagram.com/aayam_dance_troupe/?hl=en"
+                    target="_blank"
+                  >
+                    Instagram
+                  </a>
+                </p>
+                <p>
+                  <a
+                    className="link-a"
+                    href="https://www.youtube.com/channel/UC5hcE48aMfqmPu9qTFQAwlA"
+                    target="_blank"
+                  >
+                    Youtube
+                  </a>
+                </p>
+                <p>
+                  <a
+                    className="link-a"
+                    href="https://www.facebook.com/aayaminstitute27/"
+                    target="_blank"
+                  >
+                    Facebook
+                  </a>
+                </p>
               </div>
               <div>
                 <div>
