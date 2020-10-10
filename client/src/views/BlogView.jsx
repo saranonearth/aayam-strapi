@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown";
 import Loader from "../components/Loader";
 import Empty from "../assets/empty.png";
 import ReactGA from "react-ga";
+import { format } from "date-fns";
 const BlogView = () => {
   const [state, setState] = useState({
     data: null,
@@ -60,7 +61,7 @@ const BlogView = () => {
           </div>
 
           <div className="content">
-            <p className="title-text">Title Lorem ipsum dolor sit amet.</p>
+  <p className="title-text">{state.data && state.data.Title}</p>
           </div>
           <div className="dash"></div>
         </div>
@@ -82,6 +83,17 @@ const BlogView = () => {
                   src={state.data.Banner.url}
                 />
               </div>
+              <div className="center">
+                <div><img class="author-image" src={state.data.AuthorImage.url} alt="author-image"/></div>
+    <div>
+          <p  className="flex-m">{state.data.Author}</p>
+    </div>
+              </div>
+                  <div className="center">
+                    <i className="fa fa-calendar m-a" aria-hidden="true"></i> &nbsp;
+              &nbsp;
+        <p>{format(new Date(state.data.createdAt), "do MMM yyyy HH:MM")}</p>
+    </div>
 
               <div className="d-content">
                 <div className="description">
