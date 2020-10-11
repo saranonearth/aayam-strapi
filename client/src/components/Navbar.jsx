@@ -8,7 +8,7 @@ const Navbar = ({ changeShowNavbar }) => {
         <div className="nav-section1">
           <div className="nav-section1-content">
             <div>
-              <i className="far fa-compass compass-icon"></i>
+           
             </div>
             <div>
               <Link className="link" onClick={() => changeShowNavbar()} to="/">
@@ -99,35 +99,35 @@ const Navbar = ({ changeShowNavbar }) => {
             </div>
             <div className="sub-section">
               <div className="sub-in">
+           
                 <p className="sub-title">Get social</p>
-                <p className="sub-title">Get social</p>
-                <p>
+                <span>
                   <a
                     className="link-a"
                     href="https://www.instagram.com/aayam_dance_troupe/?hl=en"
                     target="_blank"
                   >
-                    Instagram
+                <i class="fab fa-instagram s-icon"></i>
                   </a>
-                </p>
-                <p>
+                </span>
+                <span>
                   <a
                     className="link-a"
                     href="https://www.youtube.com/channel/UC5hcE48aMfqmPu9qTFQAwlA"
                     target="_blank"
                   >
-                    Youtube
+            <i class="fab fa-youtube s-icon"></i>
                   </a>
-                </p>
-                <p>
+                </span>
+                <span>
                   <a
                     className="link-a"
                     href="https://www.facebook.com/aayaminstitute27/"
                     target="_blank"
                   >
-                    Facebook
+                <i class="fab fa-facebook-f s-icon"></i>
                   </a>
-                </p>
+                </span>
               </div>
               <div>
                 <div>
