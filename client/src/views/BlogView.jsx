@@ -50,7 +50,7 @@ const BlogView = () => {
   return (
     <div>
       <div>
-        <div className="triangle-left move"></div>
+       
         <div className="banner banner-2">
           <div className="header">
             <div className="logo">
@@ -84,7 +84,7 @@ const BlogView = () => {
                 />
               </div>
               <div className="center">
-                <div><img class="author-image" src={state.data.AuthorImage.url} alt="author-image"/></div>
+               {state.data.AuthorImage && <div><img class="author-image" src={state.data.AuthorImage.url} alt="author-image"/></div>}
     <div>
           <p  className="flex-m">{state.data.Author}</p>
     </div>

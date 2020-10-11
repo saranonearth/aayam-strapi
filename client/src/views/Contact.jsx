@@ -63,7 +63,7 @@ const Contact = () => {
 
   return (
     <div>
-      <div className="triangle-left move"></div>
+
       <div className="banner banner-2">
         <div className="header">
           <div className="logo">

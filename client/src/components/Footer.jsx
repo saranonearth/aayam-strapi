@@ -25,34 +25,36 @@ const Footer = () => {
         </div>
         <div className="footer-right">
           <div>
-            <p className="sub-title">Get social</p>
-            <p>
-              <a
-                className="link-a"
-                href="https://www.instagram.com/aayam_dance_troupe/?hl=en"
-                target="_blank"
-              >
-                Instagram
-              </a>
-            </p>
-            <p>
-              <a
-                className="link-a"
-                href="https://www.youtube.com/channel/UC5hcE48aMfqmPu9qTFQAwlA"
-                target="_blank"
-              >
-                Youtube
-              </a>
-            </p>
-            <p>
-              <a
-                className="link-a"
-                href="https://www.facebook.com/aayaminstitute27/"
-                target="_blank"
-              >
-                Facebook
-              </a>
-            </p>
+             <p className="sub-title">Get social</p>
+
+                <span>
+                  <a
+                    className="link-a"
+                    href="https://www.instagram.com/aayam_dance_troupe/?hl=en"
+                    target="_blank"
+                  >
+                <i class="fab fa-instagram s-icon"></i>
+                  </a>
+                </span>
+                <span>
+                  <a
+                    className="link-a"
+                    href="https://www.youtube.com/channel/UC5hcE48aMfqmPu9qTFQAwlA"
+                    target="_blank"
+                  >
+            <i class="fab fa-youtube s-icon"></i>
+                  </a>
+                </span>
+                <span>
+                  <a
+                    className="link-a"
+                    href="https://www.facebook.com/aayaminstitute27/"
+                    target="_blank"
+                  >
+                <i class="fab fa-facebook-f s-icon"></i>
+                  </a>
+                </span>
+              
           </div>
           <div>
             <img className="logo-footer" src={Logo} alt="aayam-logo" />

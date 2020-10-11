@@ -451,6 +451,21 @@ p {
     margin-top: 30px;
 }
 
+.s-icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.markdown p>img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.markdown img {
+    max-width: 80%;
+}
+
 .a-image {
     width: 250px;
     height: 250px;
