@@ -17,7 +17,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <div className="triangle-left"></div>
+
       <div className="banner banner-bg">
         <div className="header">
           <div className="logo">
