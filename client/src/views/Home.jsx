@@ -8,6 +8,7 @@ import Banner from "../assets/banner.jpg";
 import A1 from "../assets/A1.png";
 import A2 from "../assets/A2.png";
 import A3 from "../assets/A3.png";
+import Methodology from "../assets/methodology.JPG"
 const Home = () => {
   const [showMore, setShowMore] = useState(false);
   const [showMoreGuru, setShowMoreGuru] = useState(false);
@@ -230,7 +231,7 @@ const Home = () => {
           </div>
         </div>
         <div className="part2">
-          <img className="image-banner" src={Banner} alt="Our Methodology" />
+          <img className="image-banner" src={Methodology} alt="Our Methodology" />
         </div>
       </div>
       <div className="section-achievements">
