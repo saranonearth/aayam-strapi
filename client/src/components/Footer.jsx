@@ -25,36 +25,35 @@ const Footer = () => {
         </div>
         <div className="footer-right">
           <div>
-             <p className="sub-title">Get social</p>
+            <p className="sub-title">Get social</p>
 
-                <span>
-                  <a
-                    className="link-a"
-                    href="https://www.instagram.com/aayam_dance_troupe/?hl=en"
-                    target="_blank"
-                  >
-                <i class="fab fa-instagram s-icon"></i>
-                  </a>
-                </span>
-                <span>
-                  <a
-                    className="link-a"
-                    href="https://www.youtube.com/channel/UC5hcE48aMfqmPu9qTFQAwlA"
-                    target="_blank"
-                  >
-            <i class="fab fa-youtube s-icon"></i>
-                  </a>
-                </span>
-                <span>
-                  <a
-                    className="link-a"
-                    href="https://www.facebook.com/aayaminstitute27/"
-                    target="_blank"
-                  >
-                <i class="fab fa-facebook-f s-icon"></i>
-                  </a>
-                </span>
-              
+            <span>
+              <a
+                className="link-a"
+                href="https://www.instagram.com/aayam_dance_troupe/?hl=en"
+                target="_blank"
+              >
+                <i className="fab fa-instagram s-icon"></i>
+              </a>
+            </span>
+            <span>
+              <a
+                className="link-a"
+                href="https://www.youtube.com/channel/UC5hcE48aMfqmPu9qTFQAwlA"
+                target="_blank"
+              >
+                <i className="fab fa-youtube s-icon"></i>
+              </a>
+            </span>
+            <span>
+              <a
+                className="link-a"
+                href="https://www.facebook.com/aayaminstitute27/"
+                target="_blank"
+              >
+                <i className="fab fa-facebook-f s-icon"></i>
+              </a>
+            </span>
           </div>
           <div>
             <img className="logo-footer" src={Logo} alt="aayam-logo" />

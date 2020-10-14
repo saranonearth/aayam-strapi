@@ -8,17 +8,50 @@ import Banner from "../assets/banner.jpg";
 import A1 from "../assets/A1.png";
 import A2 from "../assets/A2.png";
 import A3 from "../assets/A3.png";
-import Methodology from "../assets/methodology.JPG"
+import axios from "axios";
+import _ from "../config";
+import Loader from "../components/Loader";
+import Empty from "../assets/empty.png";
+import Methodology from "../assets/methodology.JPG";
 const Home = () => {
   const [showMore, setShowMore] = useState(false);
   const [showMoreGuru, setShowMoreGuru] = useState(false);
   ReactGA.pageview("/home");
+
+  const [state, setState] = useState({
+    data: "",
+    loading: true,
+  });
+
   useEffect(() => {
     window.scrollTo(0, 0);
+    let isCancelled = false;
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(`${_.API_URL}/home`);
+        if (!isCancelled) {
+          setState({
+            ...state,
+            data: response.data,
+            loading: false,
+          });
+        }
+      } catch (error) {
+        setState({
+          ...state,
+          data: null,
+          loading: false,
+        });
+      }
+    };
+
+    fetchData();
+    return () => {
+      isCancelled = true;
+    };
   }, []);
   return (
     <div>
-
       <div className="banner banner-bg">
         <div className="header">
           <div className="logo">
@@ -231,7 +264,11 @@ const Home = () => {
           </div>
         </div>
         <div className="part2">
-          <img className="image-banner" src={Methodology} alt="Our Methodology" />
+          <img
+            className="image-banner"
+            src={Methodology}
+            alt="Our Methodology"
+          />
         </div>
       </div>
       <div className="section-achievements">
@@ -239,42 +276,63 @@ const Home = () => {
           <div className="title-bold mt-4">Our Achievements</div>
         </div>
         <div className="a-list">
-          <div className="a-card">
-            <img src={A2} className="a-image" alt="achievement" />
+          {state.loading ? (
+            <div className="center">
+              <Loader />
+            </div>
+          ) : state.data.Achievements.length > 0 ? (
+            state.data.Achievements.map((e, i) => (
+              <div key={i} className="a-card">
+                <img src={e.Image.url} className="a-image" alt="achievement" />
 
-            <p className="semi-blod">
-              <strong>Arshia Mathur</strong> – Recipient of Junior National
-              Scholarship from Centre for Cultural Resources and Training.
-            </p>
-          </div>
-          <div className="a-card">
-            <img src={A1} className="a-image" alt="achievement" />
+                <p className="semi-blod">
+                  <strong>{e.Name}</strong> –{e.Description}
+                </p>
+              </div>
+            ))
+          ) : (
+            <div className="center flex-it">
+              <div>
+                <div>
+                  <img className="empty-icon" src={Empty} alt="empty-icon" />
+                </div>
 
-            <p className="semi-blod">
-              <strong>Shashrek Ambardar</strong> – Shashrek is a talented
-              dancer, who has created a niche for himself in the field of dance
-              at a very young age. Shashrek is the recipient of National Bal
-              Shree Award, highest child honour awarded by the President. He has
-              also received Junior National Scholarship from Centre for Cultural
-              Resources and Training (CCRT).
-            </p>
-          </div>
-          <div className="a-card">
-            <img src={A3} className="a-image" alt="achievement" />
-
-            <p className="semi-blod">
-              <strong>Tanusha Tyagi </strong>– Recipient of Junior National
-              Scholarship from Centre for Cultural Resources and Training.
-            </p>
-          </div>
+                <div>
+                  <p>No achievements found. Check again later </p>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      <div className="section-achievements">
+      <div>
         <div className="center mt-4">
-          <div className="title-bold mt-4">Our Partner</div>
+          {state.data && state.data.Partners.length > 1 ? (
+            <div className="title-bold mt-4">Our Partners</div>
+          ) : (
+            <div className="title-bold mt-4">Our Partner</div>
+          )}
         </div>
 
-        <Partners />
+        {state.loading ? (
+          <div className="center">
+            <Loader />
+          </div>
+        ) : state.data.Partners.length > 0 ? (
+          <Partners data={state.data.Partners} />
+        ) : (
+          <div className="center flex-it">
+            <div>
+              <div>
+                <img className="empty-icon" src={Empty} alt="empty-icon" />
+              </div>
+
+              <div>
+                <p>No Partners. Check again later </p>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </div>
   );

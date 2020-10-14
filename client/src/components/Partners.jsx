@@ -1,16 +1,16 @@
 import React from "react";
-import Partner from "../assets/NBT.jpg";
-const Partners = () => {
-  const list = [
-    {
-      image: Partner,
-    },
-  ];
+
+const Partners = ({ data }) => {
+  console.log("DATA", data);
   return (
     <div className="partner-list">
-      {list.map((e, i) => (
+      {data.map((e, i) => (
         <div key={i}>
-          <img src={e.image} className="partner-image" alt="partner-icon" />
+          <img
+            src={e.partnerImage.url}
+            className="partner-image"
+            alt="partner-icon"
+          />
         </div>
       ))}
     </div>

@@ -7,9 +7,7 @@ const Navbar = ({ changeShowNavbar }) => {
       <div className="nav-container">
         <div className="nav-section1">
           <div className="nav-section1-content">
-            <div>
-           
-            </div>
+            <div></div>
             <div>
               <Link className="link" onClick={() => changeShowNavbar()} to="/">
                 Home
@@ -99,7 +97,6 @@ const Navbar = ({ changeShowNavbar }) => {
             </div>
             <div className="sub-section">
               <div className="sub-in">
-           
                 <p className="sub-title">Get social</p>
                 <span>
                   <a
@@ -107,7 +104,7 @@ const Navbar = ({ changeShowNavbar }) => {
                     href="https://www.instagram.com/aayam_dance_troupe/?hl=en"
                     target="_blank"
                   >
-                <i class="fab fa-instagram s-icon"></i>
+                    <i class="fab fa-instagram s-icon"></i>
                   </a>
                 </span>
                 <span>
@@ -116,7 +113,7 @@ const Navbar = ({ changeShowNavbar }) => {
                     href="https://www.youtube.com/channel/UC5hcE48aMfqmPu9qTFQAwlA"
                     target="_blank"
                   >
-            <i class="fab fa-youtube s-icon"></i>
+                    <i class="fab fa-youtube s-icon"></i>
                   </a>
                 </span>
                 <span>
@@ -125,7 +122,7 @@ const Navbar = ({ changeShowNavbar }) => {
                     href="https://www.facebook.com/aayaminstitute27/"
                     target="_blank"
                   >
-                <i class="fab fa-facebook-f s-icon"></i>
+                    <i class="fab fa-facebook-f s-icon"></i>
                   </a>
                 </span>
               </div>

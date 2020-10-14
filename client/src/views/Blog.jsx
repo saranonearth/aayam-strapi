@@ -63,7 +63,7 @@ const Blog = () => {
             <div className="center">
               <Loader />
             </div>
-          ) : state.data ? (
+          ) : state.data.length>0 ? (
             <div className="blog-items">
               {state.data.map((d, i) => (
                 <div className="blog-item" key={i}>
@@ -87,7 +87,7 @@ const Blog = () => {
                 </div>
 
                 <div>
-                  <p>No courses. Check again later </p>
+                  <p>No blogs. Check again later </p>
                 </div>
               </div>
             </div>
