@@ -90,12 +90,12 @@ const Contact = () => {
         <div className="center">
           <br />
           <br />
-          <p>aayam@example.com </p>
+          <p>info.aayaminstitute@gmail.com </p>
         </div>
         <div className="center mb-10">
           {" "}
           <br />
-          <p>+91 98562 25232</p>
+          <p>+91 78383 04770, +91 88265 85888</p>
         </div>
 
         <div className="center">
