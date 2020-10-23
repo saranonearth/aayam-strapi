@@ -59,7 +59,6 @@ const Description = () => {
 
   return (
     <div>
-  
       <div className="banner banner-2">
         <div className="header">
           <div className="logo">
@@ -122,7 +121,10 @@ const Description = () => {
             </div>
             <div className="d-content">
               <div className="description markdown">
-                <ReactMarkdown source={state.data.Content} />
+                <ReactMarkdown
+                  source={state.data.Content}
+                  parserOptions={{ commonmark: true }}
+                />
               </div>
             </div>
             {state.data.VideoLink ? (
