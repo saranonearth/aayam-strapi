@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import ReactGA from "react-ga";
 import Guru from "../assets/guru.jpg";
 import Partners from "../components/Partners";
-import Banner from "../assets/banner.jpg";
+import Banner from "../assets/banner.JPG";
 import A1 from "../assets/A1.png";
 import A2 from "../assets/A2.png";
 import A3 from "../assets/A3.png";
